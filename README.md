@@ -60,4 +60,6 @@ Contributions to improve this project are welcome! To contribute, follow these s
 4. Push your changes to the branch (`git push origin feature/new-feature`).
 5. Create a pull request.
 
-<img width="941" alt="image" src="https://github.com/Ak-Dev9180/lamp_deploy_ass/assets/127277430/79756aaa-69b5-4cc3-861b-273967d1edb7">
+## LINK TO SCRRENSHOT PROOF
+
+https://imgur.com/a/oLjuTTC
