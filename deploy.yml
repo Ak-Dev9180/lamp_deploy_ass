@@ -1,0 +1,26 @@
+- name: Execute deploy_lamp.sh script on Slave node
+  hosts: Slaves
+  gather_facts: no
+  tasks:
+    - name: Copy deploy_lamp.sh script to Slave node
+      copy:
+        src: /home/vagrant/deploy_lamp.sh
+        dest: /tmp/deploy_lamp.sh
+        mode: 0755
+      become_user: vagrant
+      become_method: sudo
+      become_flags: '-H'
+
+    - name: Execute deploy_lamp.sh script
+      shell: /tmp/deploy_lamp.sh
+      become_user: vagrant
+      become_method: sudo
+      become_flags: '-H'
+    
+    - name: Add cron job to check server uptime
+      cron:
+        name: Check server uptime
+        minute: 0
+        hour: 0
+        job: "/usr/bin/uptime >> /var/log/uptime.log"
+        state: present
